@@ -9,8 +9,8 @@ import os
 # Firebase Initialization
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
-    'databaseURL': "https://faceattendancerealtime-2c129-default-rtdb.firebaseio.com/",
-    'storageBucket': "faceattendancerealtime-2c129.appspot.com"
+    'databaseURL': "#your firebase URL",
+    'storageBucket': "#firebase key"
 })
 ref = db.reference('attendance')
 
@@ -19,9 +19,9 @@ face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_fronta
 
 # Optional: map ID to real names
 id_to_name = {
-    "U03EV22S0053": "vishwanath",
-    "U03EV22S0057": "mahesh",
-    "ganesh": "ganesh"
+    "xyz33": "xyz",
+    "abc34": "abc",
+    "cba35": "cba"
 }
 
 logged_in_users = {}
@@ -163,7 +163,7 @@ try:
                     if distance < 10:
                         identity = best_match['identity']
 
-                        # ✅ Ignore results not from face_db
+                        #  Ignore results not from face_db
                         if "face_db" not in identity:
                             continue
 
@@ -214,3 +214,4 @@ finally:
         record_attendance(name, logout=True)
     cap.release()
     cv2.destroyAllWindows()
+
