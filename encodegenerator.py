@@ -11,8 +11,8 @@ import numpy as np
 if not firebase_admin._apps:
     cred = credentials.Certificate("serviceAccountKey.json")
     firebase_admin.initialize_app(cred, {
-        'databaseURL': "https://faceattendancerealtime-2c129-default-rtdb.firebaseio.com/",
-        'storageBucket': "faceattendancerealtime-2c129.firebasestorage.app"
+        'databaseURL': "#you firebase URL",
+        'storageBucket': "#firebase key"
     })
 
 # Importing student images
@@ -65,3 +65,4 @@ with open("EncodeFile.p", "wb") as file:
     pickle.dump(encodeListKnownWithIds, file)
 
 print("Encodings saved successfully!")
+
